@@ -15,7 +15,12 @@ class _IndexScreenState extends State<IndexScreen> {
     return Center(
       child: Container(
         child: Column(
-          children: [Text('${widget.title}')],
+          children: [
+            Text(
+              '${widget.title}',
+              style: Theme.of(context).textTheme.headline1,
+            )
+          ],
         ),
       ),
     );
