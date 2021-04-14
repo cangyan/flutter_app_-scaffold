@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/logic/log/log.dart';
+import 'package:flutter_demo/presentation/screens/index/components/body.dart';
 
 class IndexScreen extends StatefulWidget {
   final String title;
@@ -10,18 +12,35 @@ class IndexScreen extends StatefulWidget {
 }
 
 class _IndexScreenState extends State<IndexScreen> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    Log.error("+++++");
+    setState(() {
+      _counter++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        child: Column(
-          children: [
-            Text(
-              '${widget.title}',
-              style: Theme.of(context).textTheme.headline1,
-            )
-          ],
-        ),
+    return Scaffold(
+      appBar: buildAppBar(),
+      body: Body(
+        value: _counter,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        child: Icon(Icons.add),
+        backgroundColor: Theme.of(context).iconTheme.color,
+      ),
+    );
+  }
+
+  AppBar buildAppBar() {
+    return AppBar(
+      centerTitle: true,
+      title: Container(
+        child: Text("首页"),
       ),
     );
   }
