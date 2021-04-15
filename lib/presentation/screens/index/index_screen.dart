@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/logic/log/log.dart';
+import 'package:flutter_demo/logic/log/debug_logger.dart';
 import 'package:flutter_demo/presentation/screens/index/components/body.dart';
 
 class IndexScreen extends StatefulWidget {
@@ -15,7 +15,6 @@ class _IndexScreenState extends State<IndexScreen> {
   int _counter = 0;
 
   void _incrementCounter() {
-    Log.error("+++++");
     setState(() {
       _counter++;
     });
@@ -23,6 +22,7 @@ class _IndexScreenState extends State<IndexScreen> {
 
   @override
   Widget build(BuildContext context) {
+    DebugLogger().info("counter:$_counter");
     return Scaffold(
       appBar: buildAppBar(),
       body: Body(
@@ -31,7 +31,6 @@ class _IndexScreenState extends State<IndexScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         child: Icon(Icons.add),
-        backgroundColor: Theme.of(context).iconTheme.color,
       ),
     );
   }
