@@ -1,0 +1,4 @@
+{
+    "env": "prd",
+    "api-gateway": "https://api.test.com"
+}

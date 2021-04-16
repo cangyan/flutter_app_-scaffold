@@ -1,0 +1,4 @@
+{
+    "env": "dev",
+    "api-gateway": "https://api-qa.test.com"
+}

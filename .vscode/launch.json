@@ -9,7 +9,7 @@
             "request": "launch",
             "type": "dart",
             "args": [
-                "--dart-define", "MY_VAR=foo"
+                "--dart-define", "APP_ENV=dev"
             ],
         }
     ]
