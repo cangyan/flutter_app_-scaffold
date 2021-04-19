@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/logic/log/debug_logger.dart';
+import 'package:flutter_demo/logic/toast/snack_toast.dart';
 import 'package:flutter_demo/presentation/screens/index/components/body.dart';
 
 class IndexScreen extends StatefulWidget {
@@ -29,7 +30,10 @@ class _IndexScreenState extends State<IndexScreen> {
         value: _counter,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () => {
+          _incrementCounter(),
+          SnackToast().failed(context, "aaabbb$_counter")
+        },
         child: Icon(Icons.add),
       ),
     );
