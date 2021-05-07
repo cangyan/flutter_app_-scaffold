@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/constants/app_config.dart';
 import 'package:flutter_demo/constants/theme.dart';
-import 'package:flutter_demo/logic/log/debug_logger.dart';
+import 'package:flutter_demo/models/nav_item.dart';
 import 'package:flutter_demo/presentation/router/app_router.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,14 +24,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DebugLogger().info(appConfig.apiUrl);
-    DebugLogger().info(appConfig.env);
-    return MaterialApp(
-      title: 'Flutter App Scaffold',
-      theme: themeData(context),
-      darkTheme: darkThemeData(context),
-      themeMode: ThemeMode.system,
-      onGenerateRoute: appRouter.onGenerateRoute,
+    return ChangeNotifierProvider(
+      create: (context) => NavItems(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter App Scaffold',
+        theme: themeData(context),
+        darkTheme: darkThemeData(context),
+        themeMode: ThemeMode.system,
+        onGenerateRoute: appRouter.onGenerateRoute,
+      ),
     );
   }
 }

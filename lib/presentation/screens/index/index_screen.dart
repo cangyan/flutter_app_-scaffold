@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/logic/log/debug_logger.dart';
 import 'package:flutter_demo/logic/toast/snack_toast.dart';
 import 'package:flutter_demo/presentation/screens/index/components/body.dart';
+import 'package:flutter_demo/widgets/bottom_nav_bar.dart';
 
 class IndexScreen extends StatefulWidget {
   final String title;
@@ -36,6 +37,7 @@ class _IndexScreenState extends State<IndexScreen> {
         },
         child: Icon(Icons.add),
       ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 
