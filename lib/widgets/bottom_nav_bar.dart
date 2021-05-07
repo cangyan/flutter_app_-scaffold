@@ -21,12 +21,20 @@ class BottomNavBar extends StatelessWidget {
         ]),
         child: SafeArea(
           child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: List.generate(
                   value.items.length,
                   (index) => buildIconNavBarItem(
                       icon: value.items[index].icon,
                       press: () {
                         value.changeNavIndex(index: index);
+                        if (value.items[index].destinationChecker()) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      value.items[index].destination));
+                        }
                       },
                       isActivie: value.selectIndex == index ? true : false))),
         ),
