@@ -12,15 +12,22 @@ class SnackToast {
   void success(context, message) =>
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(message),
-        backgroundColor: Colors.green[300],
+        backgroundColor: Colors.greenAccent,
+        behavior: SnackBarBehavior.floating,
       ));
 
   void failed(context, message) =>
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(message),
         backgroundColor: Colors.redAccent,
+        behavior: SnackBarBehavior.floating,
       ));
 
-  void notify(context, message) => ScaffoldMessenger.of(context)
-      .showSnackBar(SnackBar(content: Text(message)));
+  void notify(context, message) => ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(message),
+          backgroundColor: Colors.blueAccent,
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
 }

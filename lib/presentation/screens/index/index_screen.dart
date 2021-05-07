@@ -32,7 +32,7 @@ class _IndexScreenState extends State<IndexScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => {
           _incrementCounter(),
-          SnackToast().failed(context, "aaabbb$_counter")
+          SnackToast().notify(context, "aaabbb$_counter")
         },
         child: Icon(Icons.add),
       ),
