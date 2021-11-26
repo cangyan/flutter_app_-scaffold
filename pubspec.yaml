@@ -24,7 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^2.0.0 # it helps us to use google fonts on our app
-  equatable: ^2.0.0
+  equatable: ^2.0.3
   logging: ^1.0.1
   logging_appenders: ^1.0.0
   provider: ^5.0.0
